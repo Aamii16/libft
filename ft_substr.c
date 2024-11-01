@@ -6,29 +6,48 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 09:14:30 by amzahir           #+#    #+#             */
-/*   Updated: 2024/10/31 09:41:37 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/01 02:36:24 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stdio.h>
+
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	int		size;
-	int		i;
-	char	*sub;
+	size_t		size;
+	size_t		i;
+	char		*sub;
 
-	i = start - 1;
+	i = start;
 	size = 0;
-	while (s[++i] && size < len)
-		size++;
-	sub = (char*)malloc(size * sizeof(char));
-	if (sub == NULL)
-		return (sub);
-	i = 0;
-	while (s[start + i] && i < len )
+	while (s[i] && size < len)
 	{
-		sub[i] = s[i + start]
+		size++;
+		i++;
+	}
+	sub = (char*)malloc((size + 1) * sizeof(char));
+	if (sub == NULL || len == 0)
+		return (NULL);
+	i = 0;
+	while (s[start + i] && i < size)
+	{
+		sub[i] = s[i + start];
 		i++;
 	}
 	sub [size] = '\0';
 	return (sub);
 }
+/*
+int main()
+{
+	char str[] = "abc";
+	char *sub;
+	int	arr[10];
+	for (int i = 0; i < 10 * sizeof(int) - 3; i++)
+	{
+		printf("%d, ", *(int *)((char *)arr + i));
+	}
+	//sub = ft_substr(str, 5, 0);
+	//puts(sub);
+}*/

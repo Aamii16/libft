@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 00:39:32 by amzahir           #+#    #+#             */
-/*   Updated: 2024/10/31 02:26:58 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/10/31 22:24:50 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_strnstr(const char *big, const char	*little, size_t len)
 	b = (char *)big;
 	while (big[i] && i < len)
 	{
+		j = 0;
 		while (little[j] && little[j] == big[i + j])
 			j++;
 		if (little[j] == '\0')

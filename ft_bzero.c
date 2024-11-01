@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:25:51 by amzahir           #+#    #+#             */
-/*   Updated: 2024/10/27 21:33:20 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/01 01:25:26 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned long int	i;
+	 size_t i;
 
 	i = 0;
 	s = (unsigned char*) s;
