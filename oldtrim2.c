@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 06:03:24 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/02 06:16:10 by amzahir          ###   ########.fr       */
+/*   Created: 2024/11/02 00:43:08 by amzahir           #+#    #+#             */
+/*   Updated: 2024/11/02 05:59:22 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,35 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*trim;
 	int	i;
 	int	len;
+	int	start;
 
+	i = 0;
 	len = ft_strlen(s1);
-	while (*s1 && isset(set, s1))
+	while (isset(set, s1[++i]))
 		len--;
-	while ( 
-
-
+	start = i;
+	i = ft_strlen(s1) + 1;
+	while (isset(set, s1[--i]))
+		len--;
+	trim = (char *)malloc(len + 1);
+	if (!trim)
+		return(NULL);
+	i = 0;
+	while (s1[start] && start < len)
+	{
+		printf("eee len %d\n", len);
+		trim[i] = s1[start];
+		i++;
+		start++;
+	}
+	trim[len] = '\0';
+	return (trim);
 }
+int main()
+{
+	char *set= "aoei";
+	char *s = "kamiko";
+	char *t = ft_strtrim(s, set);
+	puts(t);
+}
+

@@ -5,47 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 06:03:24 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/02 06:16:10 by amzahir          ###   ########.fr       */
+/*   Created: 2024/11/01 02:58:52 by amzahir           #+#    #+#             */
+/*   Updated: 2024/11/01 03:51:22 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-
-int	ft_strlen(const char *s)
+int	isset(const char *set, char c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		++i;
-	return (i);
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
 }
 
-
-int     isset(const char *set, char c)
+char	*ft_strtrim(const char *s1, char const *set)
 {
-        while (*set)
-        {
-                if (*set == c)
-                        return (1);
-                set++;
-        }
-        return (0);
-}
-
-char	*ft_strtrim(const char *s1, const char *set)
-{
+	int		i;
+	int		j;
+	int		len;
 	char	*trim;
-	int	i;
-	int	len;
 
+	i = -1;
 	len = ft_strlen(s1);
-	while (*s1 && isset(set, s1))
-		len--;
-	while ( 
-
-
+	while (s1[++i])
+	{
+		if (isset(set, s1[i]))
+			len--;
+	}
+	trim = (char *)malloc((len + 1) * sizeof(char));
+	if (trim == NULL)
+		return (trim);
+	i = -1;
+	j = -1;
+	while (s1[++i] && j < len)
+	{
+		if (isset(set, s1[i]))
+			continue ;
+		trim[++j] = s1[i];
+	}
+	trim[len] = '\0';
+	return (trim);
 }
+/*int main()
+{
+	char *set= "aoei";
+	char *s = "kamiko";
+	char *t = ft_strtrim(s, set);
+	puts(t);
+}*/
