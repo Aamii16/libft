@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:51:36 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/04 06:39:03 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/04 07:23:07 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,31 @@ int	countwords(char const *s, char c)
 char	**split(char const *s, char c)
 {
 	int	i;
+	int 	e;
+	int	elements;
 	int	w_size;
 	char	**split;
-	int	elements;
 
+	e = -1;
 	i = 0;
 	elements = countwords(s, c);
 	split = (char **)malloc((elements + 1) * sizeof(char *));
-	while (index < elements)
+	while (++e && e < elements)
 	{	
-		while (*s)
+		while (s[i])
 		{
-			if (*s == c)
-				s++;
-		
+			w_size = 0;
+			index = -1;
+			while (s[i] == c)
+				i++;
+			while (s[++i] != c)
+				w_size++;
+			split[e] = malloc((w_size + 1) * sizeof(char *));
+			while (++index < w_size)
+				split[e][index] = s[index + i - w_size]
+			split[e][w_size] = '\0';
 		}
 	}
+	split[elements] = '\0';
+	return (split);
 }
