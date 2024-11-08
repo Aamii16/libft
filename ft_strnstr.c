@@ -6,15 +6,15 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 00:39:32 by amzahir           #+#    #+#             */
-/*   Updated: 2024/10/31 22:24:50 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/08 17:13:09 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strnstr(const char *big, const char	*little, size_t len)
 {
-	unsigned long int	i;
-	unsigned long int	j;
-	char				*b;
+	size_t	i;
+	size_t	j;
+	char	*b;
 
 	i = 0;
 	j = 0;

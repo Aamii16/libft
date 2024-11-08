@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 16:12:33 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/08 17:00:24 by amzahir          ###   ########.fr       */
+/*   Created: 2024/11/08 15:07:30 by amzahir           #+#    #+#             */
+/*   Updated: 2024/11/08 16:29:49 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, inc c)
+int	count_digits(int n)
 {
-	char	*p;
+	int	count;
 
-	p = NULL;
-	while (*s)
+	count = 1;
+	if (n < 0)
+		n *= -1;
+	while (n > 0)
 	{
-		if (*s == c)
-			p = s;
-		s++;
+		nb /= 10;
+		count++;
 	}
-	return (p);
+	return (count);
+}
+
+void	ft_putnbr_fd(int n)
+{
+	long	nb;
+	int	len;
+
+	nb = n;
+	if (n < 0)
+	{
+		nb *= -1;
+		write(fd, '-', 1);
+	}
+	if (nb >= 9)
+		
 }

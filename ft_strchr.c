@@ -6,17 +6,17 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:55:03 by amzahir           #+#    #+#             */
-/*   Updated: 2024/10/26 16:12:09 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:58:58 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while(*s == '\0')
+	while (*s)
 	{
-		if(*s == c)
-			return(s);
+		if (*s == c)
+			return (s);
 		s++;
 	}
-	return(NULL);
+	return (NULL);
 }

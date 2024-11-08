@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 16:12:33 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/08 17:00:24 by amzahir          ###   ########.fr       */
+/*   Created: 2024/11/08 15:02:31 by amzahir           #+#    #+#             */
+/*   Updated: 2024/11/08 15:07:14 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, inc c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*p;
-
-	p = NULL;
 	while (*s)
 	{
-		if (*s == c)
-			p = s;
+		write(fd, s, 1);
 		s++;
 	}
-	return (p);
+	write(fd, '\n', 1);
 }

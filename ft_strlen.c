@@ -6,11 +6,11 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 02:53:42 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/01 02:53:45 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/08 17:21:30 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
