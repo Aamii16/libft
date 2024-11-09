@@ -6,11 +6,11 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:12:33 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/08 17:00:24 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/09 16:15:51 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, inc c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;
 

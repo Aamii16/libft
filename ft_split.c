@@ -6,13 +6,13 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:51:36 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/04 07:23:07 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/09 15:40:28 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 int    ft_strlcpy(char *dest, const char *src, size_t size)
@@ -33,11 +33,11 @@ int    ft_strlcpy(char *dest, const char *src, size_t size)
     return (i);
 }
 
-int	countwords(char const *s, char c, char **split, int elements)
+char	**getsplit(char const *s, char c, int *count, int *e, size_t *i)
 {
-	int	count;
-	
-	count = 0;
+	char	**split;
+
+	*count = 0;
 	while (*s)
 	{
 		while (*s && *s == c)
@@ -46,9 +46,12 @@ int	countwords(char const *s, char c, char **split, int elements)
 			s++;
 		while (*s && *s == c)
 			s++;
-		count++;
+		(*count)++;
 	}
-	return (count);
+	*i = 0;
+	*e = -1;
+	split = malloc((*count + 1) * sizeof(char *));
+	return (split);
 }
 
 int	wordsize(const char *s,char c,  size_t *i)
@@ -84,10 +87,7 @@ char	**ft_split(const char *s, char c)
 	size_t	w_size;
 	char	**split;
 
-	e = -1;
-	i = 0;
-	elements = countwords(s, c);
-	split = (char **)malloc((elements + 1) * sizeof(char *));
+	split = getsplit(s, c, &elements, &e, &i);
 	if (!split)
 		return (NULL);
 	while (s[i] && e < elements + 1)
@@ -117,4 +117,5 @@ int main()
 		puts(split[i]);
 		i++;
 	}
+	free_pt(split, i);
 }
