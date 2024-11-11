@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:12:41 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/09 16:30:08 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/11 19:47:31 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ char	*ft_strstr(const char *, const char *);
 char	*ft_strnstr(const char*, const char *, size_t);
 char	*ft_strrchr(const char *, int);
 char	*ft_strchr(const char *, int);
-char	*ft_strdup(const char *);
-char	*ft_strjoin(const char *, const char *);
 char	ft_bzero(void *, size_t);
 void	*ft_memchr(const void *, int, size_t);
 void	ft_memcmp(const void *, const void *, size_t);
 void	*ft_memcpy(void *, const void *, size_t);
 void	*ft_memmove(void *, const void *, size_t);
 void	*ft_memset(void *, int, size_t);
-void	*ft_calloc(size_t, size_t);
 size_t	ft_strlcat(char *, const char *, size_t);
 size_t	ft_strlcpy(char *, const char *, size_t);
 int	ft_atoi(const char *);
+void    *ft_calloc(size_t, size_t);
+char    *ft_strdup(const char *);
 char	*ft_strtrim(const char *, const char *);
 char	*ft_substr(const char *, unsigned int, size_t);
+char    *ft_strjoin(const char *, const char *);
 char	**ft_split(const char, char);
 char	*ft_itoa(int);
 char	*ft_strmapi(char const, char *(unsigned int, char));
