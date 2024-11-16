@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 22:07:16 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/15 22:07:22 by amzahir          ###   ########.fr       */
+/*   Created: 2024/11/15 22:51:05 by amzahir           #+#    #+#             */
+/*   Updated: 2024/11/16 00:32:42 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	t_list *new;
+
+	new = malloc(sizeof(t_list);
+	if (!new)
+		return (NULL);
+	new.content = malloc(sizeof(content));
+	if (!new.content)
+		return (NULL);
+	new->content = *content;
+	new.next = NULL;
+	return (new);
+
 }

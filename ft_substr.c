@@ -6,12 +6,11 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 09:14:30 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/02 00:40:14 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/15 22:01:19 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
@@ -40,16 +39,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	sub [size] = '\0';
 	return (sub);
 }
-/*
-int main()
-{
-	char str[] = "abc";
-	char *sub;
-	int	arr[10];
-	for (int i = 0; i < 10 * sizeof(int) - 3; i++)
-	{
-		printf("%d, ", *(int *)((char *)arr + i));
-	}
-	//sub = ft_substr(str, 5, 0);
-	//puts(sub);
-}*/

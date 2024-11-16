@@ -6,19 +6,19 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:25:51 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/01 01:25:26 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/15 21:50:52 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h> 
+#include "linft.h" 
 
 void	ft_bzero(void *s, size_t n)
 {
-	 size_t i;
+	size_t	i;
 
 	i = 0;
-	s = (unsigned char*) s;
-	while(i < n)
+	s = (unsigned char *) s;
+	while (i < n)
 	{
 		s[i] = 0;
 		i++;

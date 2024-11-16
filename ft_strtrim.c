@@ -6,26 +6,13 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 06:03:24 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/04 01:51:43 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/15 22:15:47 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-/*
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		++i;
-	return (i);
-}
-*/
-
-int	isset(const char *set, char c)
+static int	isset(const char *set, char c)
 {
 	while (*set)
 	{
@@ -40,7 +27,6 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		i;
 	int		len;
-
 
 	len = ft_strlen(s1);
 	while (isset(set, *(s1++)))
@@ -61,12 +47,3 @@ char	*ft_strtrim(const char *s1, const char *set)
 	trim[len] = '\0';
 	return (trim);
 }
-/*
-int main()
-{
-	char *set= "aoei";
-	char *s = "aioo";
-	char *t = ft_strtrim(s, set);
-	puts(t);
-}
-*/

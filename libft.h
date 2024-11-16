@@ -6,14 +6,20 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:12:41 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/11 19:47:31 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/15 22:50:47 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H 
 
-int	ft_isalnum(int);
+typedef struct	s_list
+{
+	void	*content;
+	struct s_list	*next;
+}	t_list;
+
+int	ft_isalnum(int c);
 int	ft_isalpha(int);
 int	ft_isascii(int);
 int	ft_isdigit(int);
