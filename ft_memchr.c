@@ -10,17 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*p;
+	unsigned char	u;
 
 	i = 0;
-	s = (unsigned char *) s;
-	c = (unsigned char *) c;
+	p = (unsigned char *) s;
+	u = (unsigned char ) c;
 	while (i < n)
 	{
-		if (s[i] == c)
-			return (s + i);
+		if (p[i] == u)
+			return (p + i);
 		i++;
 	}
 	return (NULL);

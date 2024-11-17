@@ -10,32 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	count_digits(int n)
-{
-	int	count;
+#include "libft.h"
 
+static int	count_digits(int nb)
+{
+	long	n;
+	int		count;
+
+	n = nb;
 	count = 1;
 	if (n < 0)
 		n *= -1;
-	while (n > 0)
+	while (n / 10 > 0)
 	{
-		nb /= 10;
+		n /= 10;
 		count++;
 	}
 	return (count);
 }
 
-void	ft_putnbr_fd(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
-	int	len;
+	int		len;
+	int		digits[11];
+	int		i;
 
+	i = 0;
 	nb = n;
 	if (n < 0)
 	{
 		nb *= -1;
-		write(fd, '-', 1);
+		write(fd, "-", 1);
 	}
-	if (nb >= 9)
-		
+	len = count_digits(nb);
+	while (len--)
+	{
+		digits[len] = nb % 10;
+		nb /= 10;
+	}
+	while (i < count_digits(n))
+		ft_putchar_fd(digits[i++] + '0', fd);
 }

@@ -9,6 +9,9 @@
 /*   Updated: 2024/11/15 22:03:01 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
 void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
@@ -16,5 +19,5 @@ void	ft_putendl_fd(char *s, int fd)
 		write(fd, s, 1);
 		s++;
 	}
-	write(fd, '\n', 1);
+	write(fd, "\n", 1);
 }

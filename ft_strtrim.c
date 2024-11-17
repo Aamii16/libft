@@ -27,6 +27,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		i;
 	int		len;
+	char	*trim;
 
 	len = ft_strlen(s1);
 	while (isset(set, *(s1++)))
@@ -38,10 +39,10 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!trim)
 		return (NULL);
 	i = -1;
+	--s1;
 	while (*s1 && i < len)
 	{
-		printf("test %d\n", i);
-		trim[++i] = *(s1 - 1);
+		trim[++i] = *(s1);
 		s1++;
 	}
 	trim[len] = '\0';

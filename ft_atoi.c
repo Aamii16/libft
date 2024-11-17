@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 02:27:58 by amzahir           #+#    #+#             */
-/*   Updated: 2024/10/31 08:30:11 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/16 15:53:12 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,3 @@ int	ft_atoi(const char *str)
 	}
 	return (num * sign);
 }
-/*
-
-#include<stdlib.h>
-int main(){
-	char s[] = "9223372036854775809";
-	char str[]	= "9223372036854775809";
-
-	int main = atoi(str);
-	int mine  = ft_atoi(s);
-
-	printf("main %d\n", main);
-	printf("mine %d\n", mine);
-}*/

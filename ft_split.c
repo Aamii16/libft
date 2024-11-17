@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	**getsplit(char const *s, char c, int *count, int *i)
+static char	**getsplit(char const *s, char c, int *count, size_t *i)
 {
 	char	**split;
 
@@ -82,6 +82,6 @@ char	**ft_split(const char *s, char c)
 		}
 		ft_strlcpy(split[e], s + i - w_size, w_size + 1);
 	}
-	split[elements] = '\0';
+	split[elements] = NULL;
 	return (split);
 }
