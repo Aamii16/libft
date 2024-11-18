@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:51:36 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/15 22:46:56 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/17 16:07:49 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static char	**getsplit(char const *s, char c, int *count, size_t *i)
 {
 	char	**split;
 
+	if (!s)
+		return (NULL);
 	*i = 0;
 	*count = 0;
 	while (*s)
@@ -28,7 +30,7 @@ static char	**getsplit(char const *s, char c, int *count, size_t *i)
 			s++;
 		(*count)++;
 	}
-	split = malloc((*count + 1) * sizeof(char *));
+	split = malloc(((*count) + 1) * sizeof(char *));
 	return (split);
 }
 
@@ -82,6 +84,6 @@ char	**ft_split(const char *s, char c)
 		}
 		ft_strlcpy(split[e], s + i - w_size, w_size + 1);
 	}
-	split[elements] = NULL;
+	split[e + 1] = NULL;
 	return (split);
 }

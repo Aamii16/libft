@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_size;
 
 	j = 0;
+	if (!dst && !size)
+		return (ft_strlen(src));
 	dst_size = ft_strlen(dst);
 	i = dst_size;
 	if (!size || size < dst_size)
