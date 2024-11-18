@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*mapi;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	mapi = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!mapi)
 		return (NULL);
