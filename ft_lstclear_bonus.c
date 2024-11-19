@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 08:57:20 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/19 21:55:06 by amzahir          ###   ########.fr       */
+/*   Created: 2024/11/20 00:06:02 by amzahir           #+#    #+#             */
+/*   Updated: 2024/11/20 00:09:15 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_calloc(size_t count, size_t size)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	void	*ptr;
+	t_list	tmp;
 
-	ptr = NULL;
-	if (!count || !size)
-		return (malloc(0));
-	if (count > (UINT_MAX / size))
-		return (NULL);
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	if (!lst || !(*lst) || !del)
+		return ;
+	while (lst)
+	{
+		tmp = lst->next;
+		ft_lstdelnode(lst, del);
+		lst = tmp;
+	}
 }
