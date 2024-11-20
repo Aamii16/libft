@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:36:20 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/19 23:40:27 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/20 03:18:49 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	while (lst)
 	{
-		if (!(lst->next))
-			lst->next = new;
-		lst = lst->next;
+		if (!((*lst)->next))
+			(*lst)->next = new;
+		*lst = (*lst)->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:12:41 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/19 02:24:18 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/20 03:46:50 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_list
 {
-	void *content;
-	struct s_list *next;
+	void			*content;
+	struct s_list	*next;
 }	t_list;
 
 int		ft_isalnum(int c);
@@ -60,5 +60,12 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *n);
+int		ft_lstsize(t_list *l);
+t_list	*ft_lstlast(t_list *l);
+void	ft_lstadd_back(t_list **l, t_list *n);
+void	ft_lstdelnode(t_list *l, void (*del)(void*));
+void	ft_lstclear(t_list **l, void (*d)(void *));
+void	ft_lstiter(t_list *l, void (*f)(void *));
+t_list	*ft_lstmap(t_list *l, void *(*f)(void *), void (*del)(void *));
 
 #endif

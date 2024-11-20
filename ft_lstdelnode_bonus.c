@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:40:48 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/20 00:05:43 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/20 03:20:19 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	ft_lstdelnode(t_list *lst, void (*del)(void *))
 	if (!lst || !del)
 		return ;
 	del(lst->content);
-	freer(lst);
+	free(lst);
 }
