@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 00:12:32 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/20 03:31:20 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/22 23:47:13 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		new = ft_lstnew(f(lst->content));
-		if (!head)
-			head = new;
+		ft_lstadd_back(&head, new);
 		if (!new)
 		{
 			ft_lstclear(&head, del);
@@ -33,5 +32,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new = new->next;
 		lst = lst->next;
 	}
-	return (new);
+	return (head);
 }

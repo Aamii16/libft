@@ -6,7 +6,7 @@
 /*   By: amzahir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:12:41 by amzahir           #+#    #+#             */
-/*   Updated: 2024/11/20 03:46:50 by amzahir          ###   ########.fr       */
+/*   Updated: 2024/11/22 20:41:52 by amzahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_lstadd_front(t_list **lst, t_list *n);
 int		ft_lstsize(t_list *l);
 t_list	*ft_lstlast(t_list *l);
 void	ft_lstadd_back(t_list **l, t_list *n);
-void	ft_lstdelnode(t_list *l, void (*del)(void*));
+void	ft_lstdelone(t_list *l, void (*del)(void*));
 void	ft_lstclear(t_list **l, void (*d)(void *));
 void	ft_lstiter(t_list *l, void (*f)(void *));
 t_list	*ft_lstmap(t_list *l, void *(*f)(void *), void (*del)(void *));

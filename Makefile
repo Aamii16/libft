@@ -6,7 +6,7 @@
 #    By: amzahir <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 01:19:47 by amzahir           #+#    #+#              #
-#    Updated: 2024/11/20 03:25:12 by amzahir          ###   ########.fr        #
+#    Updated: 2024/11/22 20:43:50 by amzahir          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS = ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 	ft_strnstr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
 
 BONUS_OBJ = ft_lstadd_back_bonus.o ft_lstadd_front_bonus.o  ft_lstnew_bonus.o \
-	ft_lstclear_bonus.o ft_lstdelnode_bonus.o ft_lstiter_bonus.o \
+	ft_lstclear_bonus.o ft_lstdelone_bonus.o ft_lstiter_bonus.o \
 	ft_lstlast_bonus.o ft_lstmap_bonus.o ft_lstsize_bonus.o 
 
 NAME = libft.a 
